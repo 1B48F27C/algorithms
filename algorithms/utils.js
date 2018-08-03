@@ -1,10 +1,10 @@
-module.exports = (function(){
-    
+module.exports = (function () {
+
     let isSorted = (arr) => {
         let isSorted = true;
-        arr.reduce((pV,cV)=>{
-            if (cV < pV) isSorted = false
-        });
+        for (let i = 0; i < arr.length; i++)
+            if (arr[i] > arr[i + 1]) isSorted = false
+
         return isSorted
     }
 
@@ -14,7 +14,7 @@ module.exports = (function(){
         arr[i] = t;
         return arr
     }
-    
+
     return {
         isSorted,
         swap

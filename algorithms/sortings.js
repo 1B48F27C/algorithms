@@ -22,18 +22,13 @@ module.exports = (function ()
         if (arr && arr.length > 1){
             let minIndex;
             for (let i=0; i<arr.length; i++) {
-                minIndex = i;
                 for (let j = i+1; j<arr.length; j++)
                 {
-                    if (arr[j]<arr[minIndex]) 
-                    minIndex = j
-                }
-                if (minIndex != i) {
-                    arr = utils.swap(arr, i, minIndex)
+                    if (arr[j]<arr[i]) 
+                    arr = utils.swap(arr, i, j)
                 }
             }
-        }
-        
+        }        
         return arr
     }
 
