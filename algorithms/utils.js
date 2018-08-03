@@ -7,8 +7,16 @@ module.exports = (function(){
         });
         return isSorted
     }
+
+    let swap = (arr, i, j) => {
+        let t = arr[j];
+        arr[j] = arr[i];
+        arr[i] = t;
+        return arr
+    }
     
     return {
-        isSorted
+        isSorted,
+        swap
     }
 })();
